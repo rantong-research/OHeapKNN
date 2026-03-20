@@ -50,17 +50,17 @@ Experiments on diverse real-world datasets demonstrate that **OHeapKNN significa
 
 This repository includes two versions of the protocol:
 
+### ⚡ Basic Version
+- Optimized for **efficiency**  
+- Reduced communication overhead  
+- ❗ Does **not** fully hide access patterns  
+
+---
 ### 🔐 Secure Version
 - Based on an **Oblivious Heap**  
 - Hides access patterns  
 - Provides **stronger security guarantees**
 
----
-
-### ⚡ Basic Version
-- Optimized for **efficiency**  
-- Reduced communication overhead  
-- ❗ Does **not** fully hide access patterns  
 
 ---
 

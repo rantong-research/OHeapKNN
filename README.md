@@ -26,7 +26,7 @@ We propose a general protocol that satisfies fundamental security requirements b
 We design a novel **oblivious heap** to hide access patterns.  
 
 - Enables **OH-enhanced OHeapKNN**  
-- Reduces complexity from **O(nk)** → **O(n + log k)**  
+- Reduces communication rounds from **O(nk)** → **O(n + log k)**  
 
 ---
 

@@ -15,7 +15,7 @@ This repository provides the implementation of **OHeapKNN**, a privacy-preservin
 
 The main contributions of this work are summarized as follows:
 
-### 1️⃣ Efficient Neighbor Selection Protocol
+### 1️⃣ Efficient Nearest Neighbors Selection Protocol
 We propose a general protocol that satisfies fundamental security requirements by adopting a **parallel-path update strategy** inspired by heap-based designs.  
 
 - Reduces communication rounds from **O(n log k)** → **O(n + log k)**  

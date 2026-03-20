@@ -66,21 +66,13 @@ This repository includes two versions of the protocol:
 
 ## 📚 References
 
-> [1] G. Lin, R. Zhou, S. Chen, W. Han, J. Tan, W. Fang, L. Wang, and T. Wei,  
-> *Kona: An Efficient Privacy-Preservation Framework for KNN Classification by Communication Optimization,*  
-> ICML 2025.
+> [1] G. Lin, R. Zhou, S. Chen, W. Han, J. Tan, W. Fang, L. Wang, and T. Wei, *Kona: An Efficient Privacy-Preservation Framework for KNN Classification by Communication Optimization,* ICML 2025.
 
-> [2] Z. Li, H. Wang, S. Zhang, W. Zhang, and R. Lu,  
-> *SecKNN: FSS-Based Secure Multi-Party KNN Classification Under General Distance Functions,*  
-> IEEE TIFS, 2024.
+> [2] Z. Li, H. Wang, S. Zhang, W. Zhang, and R. Lu, *SecKNN: FSS-Based Secure Multi-Party KNN Classification Under General Distance Functions,* IEEE TIFS, 2024.
 
-> [3] L. Liu et al.,  
-> *Toward highly secure yet efficient KNN classification scheme on outsourced cloud data,*  
-> IEEE IoT Journal, 2019.
+> [3] L. Liu et al., *Toward Highly Secure yet Efficient KNN Classification Scheme on Outsourced Cloud Data,* IEEE IoT Journal, 2019.
 
-> [4] H. Morita et al.,  
-> *Constant-Round Client-Aided Secure Comparison Protocol,*  
-> ESORICS 2018.
+> [4] H. Morita et al., *Constant-Round Client-Aided Secure Comparison Protocol,* ESORICS 2018.
 
 ---
 

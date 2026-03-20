@@ -33,8 +33,8 @@ We design a novel **oblivious heap** to hide access patterns.
 ### 3️⃣ Formal Security Guarantees
 All protocols are formally proven secure under:
 
-- Real/Ideal World Paradigm  
-- Universal Composability (UC) Framework  
+- Real/ideal world paradigm  
+- Universal composability framework  
 
 ---
 

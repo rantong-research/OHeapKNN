@@ -42,7 +42,9 @@ All protocols are formally proven secure under:
 Experiments on diverse real-world datasets demonstrate that **OHeapKNN significantly outperforms state-of-the-art schemes** in:
 
 - 🚀 Runtime performance  
-- 📡 Communication efficiency  
+- 📡 Communication efficiency
+- 🔧 Extensibility to other KNN-based schemes for further optimization  
+- 🔄 Compatibility with diverse distance functions  
 
 ---
 

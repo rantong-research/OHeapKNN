@@ -80,5 +80,4 @@ This repository includes two versions of the protocol:
 
 ## 📌 Notes
 
-- This project is a research prototype.  
 - For academic use, please cite the corresponding paper (to be added).  

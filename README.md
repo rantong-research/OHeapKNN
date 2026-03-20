@@ -43,7 +43,7 @@ Experiments on diverse real-world datasets demonstrate that **OHeapKNN significa
 
 - 🚀 Runtime performance  
 - 📡 Communication efficiency
-- 🔧 Extensibility to other KNN-based schemes for further optimization  
+- 🔧 Extensibility to other KNN-related schemes for further optimization  
 - 🔄 Compatibility with diverse distance functions  
 
 ---

@@ -1,7 +1,7 @@
 # OHeapKNN: Oblivious Heap-Enhanced Privacy-Preserving K-Nearest Neighbors Classification Over Outsourced Data
 
 > 🚧 **Note**  
-> The code is currently being organized and will be uploaded soon.
+> The code is currently being organized and will be released soon.
 
 ---
 

@@ -78,6 +78,63 @@ This repository includes two versions of the protocol:
 
 ---
 
+---
+
+## 📁 Code Structure
+
+- `OHeapKNN_b.cpp`  
+  → **Basic version** of OHeapKNN.
+
+- `OHeapKNN.cpp`  
+  → **Secure version** of OHeapKNN.
+
+---
+
+## 🔗 Dependencies
+
+This project is developed based on the **Garnet framework**:
+
+👉 https://github.com/FudanMPL/Garnet
+
+Please follow the original Garnet repository for:
+- environment setup
+- compilation instructions
+- runtime configuration
+
+---
+
+## 📜 License & Acknowledgment
+
+This project is built upon the open-source [Garnet framework](https://github.com/FudanMPL/Garnet).
+
+Garnet is released under the BSD 3-Clause License. This project follows the same licensing requirements.
+
+The Garnet framework incorporates several third-party components, including:
+- MP-SPDZ
+- SPDZ-2
+- SPDZ-BMR-ORAM
+- SCALE-MAMBA
+- NFGen
+
+These components are distributed under their respective open-source licenses.  
+For detailed licensing information, please refer to the original Garnet repository.
+
+---
+
+## ⚠️ Disclaimer
+
+This software is provided **"as is"**, without warranty of any kind, express or implied, including but not limited to:
+
+- merchantability  
+- fitness for a particular purpose  
+
+In no event shall the authors or contributors be liable for any damages arising from the use of this software.
+
+---
+
+
+
 ## 📌 Notes
 
-- For academic use, please cite the corresponding paper (to be added).  
+- This codebase is intended for **research and experimental purposes**.
+- If you use this work in your research, please cite the corresponding paper (to be updated).

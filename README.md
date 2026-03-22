@@ -102,6 +102,20 @@ Please follow the original Garnet repository for:
 - runtime configuration
 
 ---
+## ▶️ How to Run
+
+> 🚧 This section will be updated soon.
+
+The implementation is built upon the Garnet framework.  
+Detailed instructions for environment setup, compilation, and execution will be provided after the code organization is finalized.
+
+In general, the workflow follows:
+1. Set up the Garnet environment  
+2. Compile the project  
+3. Run the protocol with two-party configuration  
+
+More details (including example commands and datasets) will be added in the next update.
+---
 
 ## 📜 License & Acknowledgment
 

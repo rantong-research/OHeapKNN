@@ -1,8 +1,16 @@
+/*
+ * This implementation is developed based on the open-source Garnet framework.
+ * https://github.com/FudanMPL/Garnet
+ *
+ * We extend the original system to implement a heap-based privacy-preserving
+ * KNN scheme.
+ *
+ */
+
 #include <iostream>
 #include <random>
 #include <chrono>
 #include <queue>
-
 
 #include "../Networking/Player.h"
 #include "../Tools/ezOptionParser.h"

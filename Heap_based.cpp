@@ -195,8 +195,6 @@ int main(int argc, const char** argv)
 
     dir="knn-1/";
     vector<string>dataset_name_list={"iris"};
-    // vector<string>dataset_name_list={"Adult","Mnist","Dota2Games"};
-    // vector<string>dataset_name_list={ "Toxicity", "arcene", "RNA-seq", "PEMS-SF"};
     for(int i=0;i<dataset_name_list.size();i++){
         dataset_name=dataset_name_list[i];
         std::cout<<"-----------DataSet:"<<dataset_name<<"-----------------"<<std::endl;
@@ -286,10 +284,10 @@ void KNN_party_Heap_based::run()
     std::cout<<"test size:"<<num_test_data<<std::endl;
     std::cout<<"Feature size:"<<num_features<<std::endl;
     
-    // generate_triples_save_file();//这个函数必须独立运行，不能和后续load_triple一起使用。
+    // generate_triples_save_file();
     // cout<<"\n generate_triples_save_file success!"<<endl;
 
-    additive_share_all_data(); //会进行一轮的通信，P0 share train data , at the same time, P1 share test data
+    additive_share_all_data(); 
     cout<<std::flush;
     timer.start(m_player->total_comm());
 

@@ -24,8 +24,6 @@ const int k_const=5;// k value in KNN
 
 string dataset_name;
 string dir;
-// string dataset_name="chronic";// Dataset name, used for file naming
-// string dataset_name="mnist";// Dataset name, used for file naming
 
 int playerno;
 ez::ezOptionParser opt;

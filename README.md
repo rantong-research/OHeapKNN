@@ -145,10 +145,7 @@ For detailed licensing information, please refer to the original Garnet reposito
 
 ## ⚠️ Disclaimer
 
-This software is provided **"as is"**, without warranty of any kind, express or implied, including but not limited to:
-
-- merchantability  
-- fitness for a particular purpose  
+This software is provided **"as is"**, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability and fitness for a particular purpose.
 
 In no event shall the authors or contributors be liable for any damages arising from the use of this software.
 

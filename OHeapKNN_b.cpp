@@ -1,9 +1,26 @@
+/*
+ * This implementation is developed based on the open-source Garnet framework.
+ * https://github.com/FudanMPL/Garnet
+ *
+ * We extend the original system to implement a parallel-path heap-based
+ * KNN scheme. This version adopts a level-wise heap update strategy,
+ * where multiple active paths are processed simultaneously during
+ * heap maintenance.
+ *
+ * The code includes secure computation protocols, data sharing procedures,
+ * and the full execution pipeline for evaluating the OHeapKNN_b scheme.
+ *
+ * This implementation improves efficiency over the standard sequential
+ * heap update by leveraging batched comparisons and parallel path
+ * propagation within the heap.
+ */
+
+
+
 #include <iostream>
 #include <random>
 #include <chrono>
 #include <queue>
-
-
 #include "../Networking/Player.h"
 #include "../Tools/ezOptionParser.h"
 #include "../Networking/Server.h"

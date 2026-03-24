@@ -1,14 +1,19 @@
-
 /*
- * This implementation is developed based on the open-source Garnet framework.  https://github.com/FudanMPL/Garnet
- * 
+ * This implementation is developed based on the open-source Garnet framework.
+ * https://github.com/FudanMPL/Garnet
+ *
  * We extend the original system to implement a complete simulation of the
- * OHeapKNN mechanism. The code includes secure computation protocols,
- * data sharing procedures, and the full execution pipeline for evaluating
- * the OHeapKNN scheme.
- * 
- * Our implementation focuses on enabling end-to-end secure KNN computation
- * under the OHeapKNN design within the Garnet environment.
+ * OHeapKNN scheme, which leverages an oblivious heap to support
+ * privacy-preserving KNN computation.
+ *
+ * The code includes secure computation protocols, data sharing procedures,
+ * and the full execution pipeline for evaluating the OHeapKNN scheme.
+ * In particular, the oblivious heap design ensures that access patterns
+ * during heap operations are fully hidden.
+ *
+ * Our implementation enables end-to-end secure KNN computation under
+ * the OHeapKNN design within the Garnet environment, providing both
+ * strong privacy guarantees and improved efficiency.
  */
 
  #include <iostream>

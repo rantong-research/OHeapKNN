@@ -18,7 +18,7 @@ The main contributions of this work are summarized as follows:
 ### 1️⃣ Efficient Nearest Neighbors Selection Protocol
 We propose a general protocol that satisfies fundamental security requirements by adopting a **parallel-path update strategy** inspired by heap-based designs.  
 
-- Reduces communication rounds from **O(n log k)** → **O(n + log k)**  
+- Reduces communication rounds from **O(n log k)** to **O(n + log k)**  
 
 ---
 
@@ -26,7 +26,7 @@ We propose a general protocol that satisfies fundamental security requirements b
 We design a novel **oblivious heap** to hide access patterns.  
 
 - Enables **OH-enhanced OHeapKNN**  
-- Reduces communication rounds from **O(nk)** → **O(n + log k)**  
+- Reduces communication rounds from **O(nk)** to **O(n + log k)**  
 
 ---
 
@@ -39,7 +39,7 @@ All protocols are formally proven secure under:
 ---
 
 ### 4️⃣ Extensive Experimental Evaluation
-Experiments on diverse real-world datasets demonstrate that **OHeapKNN significantly outperforms state-of-the-art schemes** in:
+Experiments on diverse real-world datasets demonstrate that **OHeapKNN and OHeapKNN_b significantly outperform state-of-the-art schemes** in:
 
 - 🚀 Runtime performance  
 - 📡 Communication efficiency
@@ -76,10 +76,9 @@ This repository includes three versions of the protocol:
 
 ---
 
----
-
 ## 📁 Code Structure
-
+- `Heap-based.cpp`  
+  → Baseline implementation with sequential heap update.
 - `OHeapKNN_b.cpp`  
   → Implementation of OHeapKNN with **parallel-path heap update**, improving efficiency via level-wise batched operations.
 
@@ -116,10 +115,7 @@ In particular, the execution workflow includes:
 - Generating the required certificates  
 - Compiling and running the protocol
 
-This project follows the Garnet execution pipeline while replacing the KNN protocol with our OHeapKNN variants:
-- heap-based (sequential update)
-- OHeapKNN_b (parallel-path update)
-- OHeapKNN (oblivious heap)
+This project follows the Garnet execution pipeline while replacing the KNN protocol with our OHeapKNN variants.
 
 Detailed scripts and example configurations will be provided in future updates.
 
@@ -129,7 +125,7 @@ Detailed scripts and example configurations will be provided in future updates.
 
 This project is built upon the open-source [Garnet framework](https://github.com/FudanMPL/Garnet).
 
-Garnet is released under the BSD 3-Clause License. This project follows the same licensing requirements.
+Garnet is released under the BSD 3-Clause License. This project is distributed in compliance with the licensing requirements of Garnet.
 
 The Garnet framework incorporates several third-party components, including:
 - MP-SPDZ
@@ -145,7 +141,7 @@ For detailed licensing information, please refer to the original Garnet reposito
 
 ## ⚠️ Disclaimer
 
-This software is provided **"as is"**, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability and fitness for a particular purpose.
+This code is provided **"as is"**, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability and fitness for a particular purpose.
 
 In no event shall the authors or contributors be liable for any damages arising from the use of this software.
 
@@ -155,5 +151,5 @@ In no event shall the authors or contributors be liable for any damages arising 
 
 ## 📌 Notes
 
-- This codebase is intended for **research and experimental purposes**.
+- This code is intended for **research and experimental purposes**.
 - If you use this work in your research, please cite the corresponding paper (to be updated).

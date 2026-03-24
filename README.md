@@ -50,18 +50,16 @@ Experiments on diverse real-world datasets demonstrate that **OHeapKNN significa
 
 ## 🧩 Versions
 
-This repository includes two versions of the protocol:
+This repository includes three versions of the protocol:
 
-### ⚡ Basic Version
-- Optimized for **efficiency**  
-- Reduced communication overhead  
-- ❗ Does **not** fully hide access patterns  
+- **Heap-based**  
+  → Sequential heap update (baseline implementation)
 
----
-### 🔐 Secure Version
-- Based on an **Oblivious Heap**  
-- Hides access patterns  
-- Provides **stronger security guarantees**
+- **OHeapKNN_b**  
+  → Parallel-path heap update (efficiency-optimized version)
+
+- **OHeapKNN**  
+  → Oblivious heap-based implementation with access pattern hiding
 
 
 ---
@@ -83,10 +81,10 @@ This repository includes two versions of the protocol:
 ## 📁 Code Structure
 
 - `OHeapKNN_b.cpp`  
-  → **Basic version** of OHeapKNN.
+  → Implementation of OHeapKNN with **parallel-path heap update**, improving efficiency via level-wise batched operations.
 
 - `OHeapKNN.cpp`  
-  → **Secure version** of OHeapKNN.
+  → Full **oblivious heap-based implementation** of OHeapKNN, providing access pattern hiding and stronger security guarantees.
 
 ---
 
@@ -96,7 +94,7 @@ This project is developed based on the **Garnet framework**:
 
 👉 https://github.com/FudanMPL/Garnet
 
-Please follow the original Garnet repository for:
+Please refer to the original Garnet repository for:
 - environment setup
 - compilation instructions
 - runtime configuration
@@ -104,17 +102,26 @@ Please follow the original Garnet repository for:
 ---
 ## ▶️ How to Run
 
-> 🚧 This section will be updated soon.
+This implementation is built upon the Garnet framework and follows its standard KNN execution pipeline.
 
-The implementation is built upon the Garnet framework.  
-Detailed instructions for environment setup, compilation, and execution will be provided after the code organization is finalized.
+For environment setup, data preparation, and execution instructions, please refer to:
 
-In general, the workflow follows:
-1. Set up the Garnet environment  
-2. Compile the project  
-3. Run the protocol with two-party configuration  
+👉 https://github.com/FudanMPL/Garnet/blob/main/docs/knn.md
 
-More details (including example commands and datasets) will be added in the next update.
+In particular, the execution workflow includes:
+
+- Setting up the Garnet framework  
+- Preparing the input datasets  
+- Configuring the network environment  
+- Generating the required certificates  
+- Compiling and running the protocol
+
+This project follows the Garnet execution pipeline while replacing the KNN protocol with our OHeapKNN variants:
+- heap-based (sequential update)
+- OHeapKNN_b (parallel-path update)
+- OHeapKNN (oblivious heap)
+
+Detailed scripts and example configurations will be provided in future updates.
 
 ---
 

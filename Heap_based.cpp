@@ -2,9 +2,16 @@
  * This implementation is developed based on the open-source Garnet framework.
  * https://github.com/FudanMPL/Garnet
  *
- * We extend the original system to implement a heap-based privacy-preserving
- * KNN scheme.
+ * We extend the original system to implement a standard heap-based
+ * privacy-preserving KNN scheme. This version follows a sequential
+ * heap update strategy, where each insertion triggers a single-path
+ * heap maintenance process (i.e., top-down adjustment).
  *
+ * The code includes secure computation protocols, data sharing procedures,
+ * and the full execution pipeline for evaluating the heap-based KNN scheme.
+ *
+ * This implementation serves as a reference baseline for comparing
+ * more advanced parallel or oblivious heap designs.
  */
 
 #include <iostream>

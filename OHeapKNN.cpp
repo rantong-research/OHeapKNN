@@ -382,7 +382,8 @@
  
  }
  
- 
+ // The protocol implemented in this function follows the SecKNN paper
+// and is realized within the Garnet framework.
  void KNN_party_base::label_compute(vector<Z2<K>>&share_k_neighbors, vector<array<Z2<K>,2>>&label_list_count_array)
  {
      label_list_count_array.resize(k_const);
@@ -596,7 +597,8 @@
  
  }
  
- 
+ // The protocol implemented in this function follows the SecKNN paper
+// and is realized within the Garnet framework.
  void KNN_party_OHeapKNN::top_1(vector<array<Z2<K>,2>>&shares,int size_of_need_select,bool min_in_last)
  {
      for(int i=0;i<size_of_need_select-1;i++)
@@ -833,7 +835,8 @@
      return Z2<K>(res);
  
  }
- 
+ // The protocol implemented in this function follows the SecKNN paper
+// and is realized within the Garnet framework.
  void KNN_party_OHeapKNN::compute_ESD_for_one_query(int idx_of_test)
  {
      // cout<<"Enter compute_ESD_for_one_query"<<endl;

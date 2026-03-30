@@ -146,9 +146,13 @@ This code is provided **"as is"**, without warranty of any kind, express or impl
 In no event shall the authors or contributors be liable for any damages arising from the use of this software.
 
 ---
+## 📬 Contact
 
+If you have any questions regarding this project, please open an issue in this GitHub repository.
 
+If your issue is not addressed promptly, you may also contact us via email at: rantong@stu.scu.edu.cn
 
+---
 ## 📌 Notes
 
 - This code is intended for **research and experimental purposes**.

@@ -43,6 +43,8 @@ The paper establishes both correctness and security for the proposed protocols.
 
 Experiments on six real-world UCI datasets show that:
 
+Overall, OHeapKNN outperforms SecKNN and PSKC by **1.12×–136.75×** in runtime and **1.62×–115.74×** in communication rounds. The advantage grows with `k`, because OHeapKNN requires `O(n + log k)` rounds instead of `O(nk)`.
+
 - **OHeapKNN vs. SecKNN:** **1.17×–53.55×** runtime speedup and **1.62×–46.29×** fewer communication rounds.
 - **OHeapKNN vs. PSKC:** **1.12×–136.75×** runtime speedup and **4.11×–115.74×** fewer communication rounds.
 - **OHeapKNN_b vs. heap-based:** **1.02×–2.57×** runtime speedup and **1.03×–2.69×** fewer communication rounds.

@@ -41,9 +41,9 @@ The paper establishes both correctness and security for the proposed protocols.
 
 ### 4️⃣ Extensive Experimental Evaluation
 
-Experiments on six real-world UCI datasets show that:
+Experiments on six real-world UCI datasets show that OHeapKNN outperforms SecKNN and PSKC by **1.12×–136.75×** in runtime and **1.62×–115.74×** in communication rounds. The advantage grows with `k`, because OHeapKNN requires `O(n + log k)` rounds instead of `O(nk)`.
 
-Overall, OHeapKNN outperforms SecKNN and PSKC by **1.12×–136.75×** in runtime and **1.62×–115.74×** in communication rounds. The advantage grows with `k`, because OHeapKNN requires `O(n + log k)` rounds instead of `O(nk)`.
+Key comparisons:
 
 - **OHeapKNN vs. SecKNN:** **1.17×–53.55×** runtime speedup and **1.62×–46.29×** fewer communication rounds.
 - **OHeapKNN vs. PSKC:** **1.12×–136.75×** runtime speedup and **4.11×–115.74×** fewer communication rounds.
@@ -126,7 +126,7 @@ Additional observations from the evaluation:
 
 ## 🧩 Versions
 
-This repository includes three versions of the protocol:
+This repository includes three implementations:
 
 - **Heap-based**
   → Sequential heap update (baseline implementation).
@@ -203,7 +203,7 @@ Detailed scripts and example configurations will be provided in future updates.
 
 > [2] Z. Li, H. Wang, S. Zhang, W. Zhang, and R. Lu, *SecKNN: FSS-Based Secure Multi-Party KNN Classification Under General Distance Functions*, _IEEE TIFS_, 2024. (SecKNN)
 
-> [3] L. Liu et al., *Toward Highly Secure yet Efficient KNN Classification Scheme on Outsourced Cloud Data*, _IEEE IoT Journal_, 2019. (PSKC)
+> [3] L. Liu et al., *Toward Highly Secure yet Efficient KNN Classification Scheme on Outsourced Cloud Data*, _IEEE Internet of Things Journal_, 2019. (PSKC)
 
 > [4] H. Morita et al., *Constant-Round Client-Aided Secure Comparison Protocol*, _ESORICS_ 2018.
 

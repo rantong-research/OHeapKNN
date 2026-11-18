@@ -193,7 +193,16 @@ In particular, the execution workflow includes:
 
 This project follows the Garnet execution pipeline while replacing the KNN protocol with our OHeapKNN variants.
 
-Detailed scripts and example configurations will be provided in future updates.
+### Experiment Runner
+
+After the Garnet environment and the desired network profile are ready, `KNN-experiment.sh` builds and runs the released protocols:
+
+```bash
+./KNN-experiment.sh LAN
+./KNN-experiment.sh RTT5ms OHeapKNN
+```
+
+Logs and a summary are written to `KNN-experiment-res-<TAG>/`. Network shaping is kept separate; configure the LAN/WAN profile before running the script.
 
 ---
 

@@ -14,7 +14,7 @@
 #   ./KNN-experiment.sh WAN OHeapKNN OHeapKNN_b Heap_based
 #
 # Network shaping is intentionally separate from this script.
-# If LAN.sh / WAN.sh are available, configure the network first:
+# Configure the network first with the included helpers:
 #   ./LAN.sh 0       # LAN
 #   ./LAN.sh 5       # 5 ms RTT
 #   ./WAN.sh         # WAN profile

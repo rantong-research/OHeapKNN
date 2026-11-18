@@ -202,7 +202,17 @@ After the Garnet environment and the desired network profile are ready, `KNN-exp
 ./KNN-experiment.sh RTT5ms OHeapKNN
 ```
 
-Logs and a summary are written to `KNN-experiment-res-<TAG>/`. Network shaping is kept separate; configure the LAN/WAN profile before running the script.
+Logs and a summary are written to `KNN-experiment-res-<TAG>/`.
+
+Network shaping is provided by `LAN.sh` and `WAN.sh`:
+
+```bash
+./LAN.sh 5                 # 5 ms RTT
+./KNN-experiment.sh RTT5ms
+
+./WAN.sh                   # 5 Mbps, 40 ms RTT
+./KNN-experiment.sh WAN
+```
 
 ---
 

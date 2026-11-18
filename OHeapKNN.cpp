@@ -88,7 +88,7 @@
      void start_networking(ez::ezOptionParser& opt);// Establish connection
      void read_meta_and_P0_sample_P1_query();
      virtual void compute_ESD_for_one_query(int idx_of_test)=0;
-     virtual void top_1(vector<array<Z2<K>,2>>&shares,int size_of_need_select,bool min_in_last)=0;  // Top-1 algorithm
+     virtual void top_1(vector<array<Z2<K>,2>>&shares,int size_of_need_select)=0;  // Top-1 algorithm
  
      Z2<K> secure_compare(Z2<K>x1,Z2<K>x2,bool greater_than=true);// Default: x1 > x2 -> 1, x1 < x2 -> 0, x1 == x2 -> 0 ******
      /*
@@ -157,7 +157,7 @@
      void additive_share_all_data(); 
  
      void compute_ESD_for_one_query(int idx_of_test);
-     void top_1(vector<array<Z2<K>,2>>&shares,int size_of_need_select,bool min_in_last=true);
+     void top_1(vector<array<Z2<K>,2>>&shares,int size_of_need_select);
      void run();
  
      void test_additive_share_all_data_function();
@@ -351,8 +351,8 @@
        //  std::cout<<endl;
          this->label_compute(shares_selected_k,m_shared_label_list_count_array);
          // 
-         top_1(m_shared_label_list_count_array,k_const,false);
-         Z2<K>predicted_label=reveal_one_num_to(m_shared_label_list_count_array[k_const-1][1],1); 
+         top_1(m_shared_label_list_count_array,k_const);
+         Z2<K>predicted_label=reveal_one_num_to(m_shared_label_list_count_array[0][1],1); 
     //std::cout<<reveal_one_num_to(m_shared_label_list_count_array[0][0],0)<<endl;
     
     // label
@@ -599,10 +599,13 @@
  
  // The protocol implemented in this function follows the SecKNN paper
 // and is realized within the Garnet framework.
- void KNN_party_OHeapKNN::top_1(vector<array<Z2<K>,2>>&shares,int size_of_need_select,bool min_in_last)
+ void KNN_party_OHeapKNN::top_1(vector<array<Z2<K>,2>>&shares,int size_of_need_select)
  {
-     for(int i=0;i<size_of_need_select-1;i++)
-         SS_scalar(shares, i, size_of_need_select-1, !min_in_last);
+     // Keep the first maximum in shares[0]. SS_scalar(0, i, false) swaps
+     // only when shares[0] < shares[i], so equal counts preserve the
+     // earlier entry in the input label list.
+     for(int i=1;i<size_of_need_select;++i)
+         SS_scalar(shares, 0, i, false);
  }
  
  

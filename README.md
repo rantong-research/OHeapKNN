@@ -135,7 +135,7 @@ This repository includes three implementations:
 
 ## 📁 Code Structure
 
-- `Heap-based.cpp`
+- `Heap_based.cpp`
   → Baseline implementation with sequential heap update.
 - `OHeapKNN_b.cpp`
   → Implementation of OHeapKNN with **parallel-path heap update**, improving efficiency via level-wise batched operations.

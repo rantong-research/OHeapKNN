@@ -922,6 +922,58 @@
  }
  
  
+ void KNN_party_base::read_meta_and_P0_sample_P1_query()
+ {
+     std::ifstream meta_file ("Player-Data/Knn-Data/"+dir+dataset_name+"-data/Knn-meta");
+     meta_file >> num_features;// Number of features
+     meta_file >> num_train_data;
+     meta_file >> num_test_data;
+     meta_file.close();
+     if(playerno==0)
+     {
+         std::ifstream sample_file ("Player-Data/Knn-Data/"+dir+dataset_name+"-data/P0-0-X-Train");// Temporarily hard-coded as P0
+         for (int i = 0; i < num_train_data; ++i)
+         {
+             Sample*sample_ptr=new Sample(num_features);
+             for (int j = 0; j < num_features; ++j)
+             {
+                 sample_file>>sample_ptr->features[j];
+             }
+             m_sample.push_back(sample_ptr);
+         }
+         sample_file.close();
+
+         std::ifstream label_file ("Player-Data/Knn-Data/"+dir+dataset_name+"-data/P0-0-Y-Train");// Temporarily hard-coded as P0
+         for (int i = 0; i < num_train_data; ++i){
+             label_file>>m_sample[i]->label;
+         }
+         label_file.close();
+         cout<<"P0 read training file end!GGG"<<endl;
+     }
+     else
+     {
+         std::ifstream test_file ("Player-Data/Knn-Data/"+dir+dataset_name+"-data/P1-0-X-Test");// Temporarily hard-coded as P1
+         for (int i = 0; i < num_test_data; ++i)
+         {
+             Sample*test_ptr=new Sample(num_features);
+             for (int j = 0; j < num_features; ++j)
+             {
+                 test_file>>test_ptr->features[j];
+             }
+             m_test.push_back(test_ptr);
+         }
+         test_file.close();
+
+         std::ifstream label_file ("Player-Data/Knn-Data/"+dir+dataset_name+"-data/P1-0-Y-Test");// Temporarily hard-coded as P1
+         for (int i = 0; i < num_test_data; ++i){
+             label_file>>m_test[i]->label;
+         }
+         label_file.close();
+         // cout<<"P1 read testing(query) file end!"<<endl;
+     }
+     
+ }
+
  void KNN_party_OHeapKNN::additive_share_all_data()
  {
      m_train_additive_share_vec.resize(num_train_data);

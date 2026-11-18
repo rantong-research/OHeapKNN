@@ -302,6 +302,8 @@ Compile the target:
 make -j8 OHeapKNN.x
 ```
 
+`KNN-experiment.sh` runs `make clean` before building by default. Set `SKIP_CLEAN=1` to reuse existing objects; `JOBS`, `PORT`, and `HOST` can also be overridden.
+
 LAN:
 
 ```bash

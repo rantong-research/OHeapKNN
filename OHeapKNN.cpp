@@ -37,6 +37,9 @@
  using namespace std;
  void test_Z2();
  const int K=64;// Ring size
+ // Implementation note: this release fixes k = 5 and does not implement
+ // the k = 1,2 sequential-CompareSwap case mentioned in the paper; only
+ // the k >= 3 path used by the experiments is implemented.
  const int k_const=5;// k value in KNN 
  
  string dataset_name;
@@ -281,10 +284,16 @@
  
      int right_prediction_cnt=0;
      
-     
+     const array<Z2<K>,2> dummy_heap_entry = {
+         Z2<K>(1000000000000000000), Z2<K>(1000000000000000000)
+     };
      
      for(int idx=0;idx<num_test_data;++idx)
      {
+        // The oblivious heap must be re-initialized with dummy entries
+        // for every query; otherwise the previous query's top-k leaks in.
+        heap.assign(k_const + 1, dummy_heap_entry);
+
         compute_ESD_for_one_query(idx);
          struct Node { short l, r;
          bool  state, flag; };

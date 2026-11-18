@@ -35,6 +35,9 @@
 using namespace std;
 void test_Z2();
 const int K=64;// Ring size
+// Implementation note: this release fixes k = 5 and does not implement
+// the k = 1,2 sequential-CompareSwap case mentioned in the paper; only
+// the k >= 3 path used by the experiments is implemented.
 const int k_const=5;// k value in KNN 
 
 string dataset_name;

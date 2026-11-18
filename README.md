@@ -33,11 +33,7 @@ We design a novel **oblivious heap** to hide access patterns and propose the OH-
 
 ### 3️⃣ Correctness and Formal Security
 
-The paper establishes both correctness and security for the proposed protocols.
-
-- **Correctness:** Lemma 1 (CompareSwap insertion), Lemma 2 (PPHS), and Lemma 3 (STDS); composing SSED, STDS, and SPV yields a correct **OHeapKNNC** for `3 ≤ k ≤ n`, with deterministic distance and voting tie handling.
-- **Security:** formal proofs under the **real/ideal-world paradigm** and the **universal composability (UC) framework** (Lemmas 4–7 and Theorem 1), for a semi-honest adversary corrupting at most one of the two non-colluding servers.
-- **Leakage:** PPHS intentionally reveals comparison results and partial distance ordering; STDS removes this leakage by following a fixed operation schedule.
+The paper establishes correctness for PPHS, STDS, SPV, and OHeapKNNC, and proves security under the real/ideal-world paradigm and the UC framework for a semi-honest, non-colluding two-server setting. PPHS leaks access patterns by design; STDS hides them with a fixed schedule.
 
 ### 4️⃣ Extensive Experimental Evaluation
 
@@ -55,21 +51,9 @@ Key comparisons:
 
 ## ✅ Correctness and Security
 
-### Correctness
-
-The paper proves correctness for the core protocols:
-
-1. **Lemma 1 (CompareSwap insertion).** For a non-strict max-heap `H` of size `k`, inserting a pair through `CS(0, 1)` and then applying either conventional sift-down or a fixed top-down sweep produces a max-heap containing the `k` smallest distance keys of `H ∪ {a}`.
-2. **Lemma 2 (PPHS).** For `3 ≤ k ≤ n`, PPHS returns the `k` smallest distance keys in a max-heap after completing pending updates. Later insertions cannot overtake earlier ones, and concurrent comparisons operate on disjoint nodes.
-3. **Lemma 3 (STDS).** For `3 ≤ k ≤ n`, STDS returns the `k` smallest valid distance keys after its fixed CompareSwap schedule, assuming all dummy keys exceed valid keys. The schedule uses at most `3(n − 1) + 2⌊log₂ k⌋ + 1` comparison batches and hence `O(n + log k)` communication rounds.
-4. **SPV and OHeapKNNC.** Frequency counting in SPV follows the SecKNN construction; STDS′ selects the first maximum-count label in a tie. Composing SSED, STDS, and SPV gives a correct KNN classification result under the specified distance- and voting-tie rules.
-
-### Security
-
-- **Threat model:** semi-honest (honest-but-curious) parties; the two cloud servers do not collude; at most one party is corrupted. Data owners and query users are assumed to follow the protocol.
-- **Assumptions:** a pseudorandom generator (PRG), an IND-CPA-secure and circuit-private HE scheme, additive secret sharing, and FSS-based secure comparison.
-- **Proof structure:** Lemma 4 (CompareSwap), Lemma 5 (random pair generation), Lemma 6 (PPHS with leakage `L_PPHS`), Lemma 7 (STDS with leakage `L_STDS`), and Theorem 1 (composition of SSED, STDS, SPV, and their sub-protocols).
-- **Access-pattern hiding:** PPHS is the efficiency-oriented basic protocol and leaks comparison outcomes and partial ordering by design. OHeapKNN uses STDS, whose operation schedule depends only on public `n` and `k`, so the access patterns remain hidden.
+- **Correctness:** the paper proves correctness of PPHS, STDS, SPV, and the full OHeapKNNC protocol, including deterministic distance and voting tie handling.
+- **Security:** formal analysis under the real/ideal-world paradigm and the UC framework, for a semi-honest adversary corrupting at most one of two non-colluding servers.
+- **Leakage:** PPHS intentionally reveals comparison outcomes and partial distance ordering; STDS hides access patterns with a fixed, data-independent schedule.
 
 ---
 

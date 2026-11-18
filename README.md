@@ -286,27 +286,27 @@ Compile the target:
 make -j8 OHeapKNN.x
 ```
 
-`KNN-experiment.sh` runs `make clean` before building by default. Set `SKIP_CLEAN=1` to reuse existing objects; `JOBS`, `PORT`, and `HOST` can also be overridden.
+`KNN-experiment.sh` runs `OHeapKNN` by default. To run `OHeapKNN_b` or `Heap_based`, edit the `PROTOCOLS` array in the script.
 
 LAN:
 
 ```bash
 ./LAN.sh 0
-./KNN-experiment.sh LAN OHeapKNN
+./KNN-experiment.sh LAN
 ```
 
 Emulated RTT, for example 5 ms:
 
 ```bash
 ./LAN.sh 5
-./KNN-experiment.sh RTT5ms OHeapKNN
+./KNN-experiment.sh RTT5ms
 ```
 
 WAN:
 
 ```bash
 ./WAN.sh
-./KNN-experiment.sh WAN OHeapKNN
+./KNN-experiment.sh WAN
 ```
 
 Alternatively, launch the two parties manually in two terminals:
@@ -319,7 +319,7 @@ Alternatively, launch the two parties manually in two terminals:
 ./OHeapKNN.x 1 -pn 10000 -h localhost
 ```
 
-`KNN-experiment.sh` stores build logs, per-party logs, and a summary in:
+`KNN-experiment.sh` stores the P0/P1 logs in:
 
 ```text
 KNN-experiment-res-<TAG>/
@@ -355,7 +355,7 @@ To run another dataset, update `dir` and `dataset_name_list` in all three `.cpp`
 - `Player-Data/2-fss/r0` is missing: copy the keys as shown in step 5.
 - `Makefile` not found: run the commands from the Garnet root, not from this repository root.
 - `tc: command not found` or permission errors: install `iproute2` and run `LAN.sh` / `WAN.sh` with `sudo`.
-- `Address already in use`: choose another `PORT` (for example `PORT=10001 ./KNN-experiment.sh ...`) and update the `tc` filters if necessary.
+- `Address already in use`: change `-pn 10000` in `KNN-experiment.sh` and keep the `tc` filters in `LAN.sh` / `WAN.sh` consistent.
 
 For the original Garnet KNN data-format reference, see:
 
